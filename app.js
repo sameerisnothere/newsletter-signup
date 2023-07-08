@@ -3,8 +3,6 @@ import bodyParser from 'body-parser';
 import request from 'request';
 import https from 'https';
 
-//a8cf335d7afa9ed1507e8f0e629dadec-us21    appid
-//198a3639e5       audienceid
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -65,7 +63,7 @@ app.post('/', function (req, res) {
 
 })
 
-app.post("/failure", function(req,res){
+app.post("/failure", function (req,res) {
     res.redirect("/");
 })
 
@@ -74,3 +72,22 @@ app.post("/failure", function(req,res){
 app.listen(process.env.PORT || 3000, function () {     //this is a dynamic port that heroku chooses
     console.log("server running on port 3000");
 })
+
+
+
+// in order to deploy on heroku:
+// node --version 
+// npm --version
+// git --version
+// touch Procfile
+// git init
+// git commit -m "<any comment>"
+// heroku login    (in cmd)
+// heroku create
+// git remote add heroku https://git.heroku.com/dry-sea-04792.git
+// git push heroku master
+// in order to commit changes after changing something:
+// git clone  https://git.heroku.com/dry-sea-04792.git
+// git add .
+// git commit -m "changes commited"
+// git push heroku master
